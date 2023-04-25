@@ -1,0 +1,38 @@
+
+spring:
+  application:
+    name:  abc-service  # ==> This is Service-Id
+  config:
+    enabled: true
+    import: optional:configserver:http://localhost:8012
+#      - configserver:http://localhost:8012                  # <- pull the configuration from the configserver
+#      - optional:file:/absolute/path/to/the/project/root/   # <- if there are any additional configuration files, use them
+
+#management:
+#  security:
+#    enabled: false
+#  endpoints:
+#    web:
+#      exposure:
+#        include=*:
+
+#spring:
+#  application:
+#    name: greeting-service
+#  config:
+#    import: "optional:configserver:"
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
+
+
+#spring:
+#  application:
+#    name: config-client
+#  profiles:
+#    active: development
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
+#      username: user
+#      password: password

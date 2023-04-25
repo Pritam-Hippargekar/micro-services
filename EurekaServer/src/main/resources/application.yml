@@ -1,0 +1,36 @@
+#spring:
+#  profiles:
+#    active: default
+#  security:
+#    user:
+#      name: admin
+#      password: password
+
+spring:
+  application:
+    name: eureka-service
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+
+server:
+  port: 9000
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false    # ==> Dont register itself with eureka
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+
+#management:
+#  security:
+#    enabled: false
+#  endpoints:
+#    web:
+#      exposure:
+#        include=*:

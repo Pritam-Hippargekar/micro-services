@@ -1,0 +1,28 @@
+#spring:
+#  profiles:
+#    active: default
+
+#spring:
+#  application:
+#    name:  abc-service  # ==> This is Service-Id
+
+server:
+  port: 8000
+
+spring:
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+# register with eureka server.
+eureka:
+  client:
+    fetchRegistry: false
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka
+
+#management:
+#  security:
+#    enabled: false
